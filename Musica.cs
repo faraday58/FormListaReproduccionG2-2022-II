@@ -10,6 +10,15 @@ namespace FormListaReproduccionG2_2022_II
         private string album;
         #endregion
 
+        #region Constructor
+        public Musica(string cancion, string artista, string album)
+        {
+            Cancion = cancion;
+            Artista = artista;
+            Album = album;
+        }
+        #endregion
+
         #region Propiedades
         public string Cancion { 
             get => cancion; 

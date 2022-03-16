@@ -29,7 +29,7 @@ namespace FormListaReproduccionG2_2022_II
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstbCanciones = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,14 +42,14 @@ namespace FormListaReproduccionG2_2022_II
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lstbCanciones
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 29;
-            this.listBox1.Location = new System.Drawing.Point(45, 118);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(359, 439);
-            this.listBox1.TabIndex = 0;
+            this.lstbCanciones.FormattingEnabled = true;
+            this.lstbCanciones.ItemHeight = 29;
+            this.lstbCanciones.Location = new System.Drawing.Point(45, 118);
+            this.lstbCanciones.Name = "lstbCanciones";
+            this.lstbCanciones.Size = new System.Drawing.Size(359, 439);
+            this.lstbCanciones.TabIndex = 0;
             // 
             // label1
             // 
@@ -129,6 +129,7 @@ namespace FormListaReproduccionG2_2022_II
             this.cargarCancionesToolStripMenuItem.Name = "cargarCancionesToolStripMenuItem";
             this.cargarCancionesToolStripMenuItem.Size = new System.Drawing.Size(403, 48);
             this.cargarCancionesToolStripMenuItem.Text = "Cargar Canciones";
+            this.cargarCancionesToolStripMenuItem.Click += new System.EventHandler(this.cargarCancionesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -141,7 +142,7 @@ namespace FormListaReproduccionG2_2022_II
             this.Controls.Add(this.lbArtista);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstbCanciones);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -155,7 +156,7 @@ namespace FormListaReproduccionG2_2022_II
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstbCanciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
