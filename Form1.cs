@@ -31,5 +31,15 @@ namespace FormListaReproduccionG2_2022_II
             canciones.Add(new Musica("Evil Incarnate", "Hammerfall", "Revolution"));
             canciones.Add(new Musica("", "", ""));
         }
+
+        private void lstbCanciones_SelectedIndexChanged(object sender, EventArgs e)
+        {   
+                            //Casteando a Musica
+            Musica cancion =(Musica)canciones[lstbCanciones.SelectedIndex];
+            lbArtista.Text = cancion.Artista;
+            lbAlbum.Text = cancion.Album;
+            lbCancion.Text = cancion.Cancion;
+
+        }
     }
 }

@@ -50,6 +50,7 @@ namespace FormListaReproduccionG2_2022_II
             this.lstbCanciones.Name = "lstbCanciones";
             this.lstbCanciones.Size = new System.Drawing.Size(359, 439);
             this.lstbCanciones.TabIndex = 0;
+            this.lstbCanciones.SelectedIndexChanged += new System.EventHandler(this.lstbCanciones_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -127,7 +128,7 @@ namespace FormListaReproduccionG2_2022_II
             // cargarCancionesToolStripMenuItem
             // 
             this.cargarCancionesToolStripMenuItem.Name = "cargarCancionesToolStripMenuItem";
-            this.cargarCancionesToolStripMenuItem.Size = new System.Drawing.Size(403, 48);
+            this.cargarCancionesToolStripMenuItem.Size = new System.Drawing.Size(374, 48);
             this.cargarCancionesToolStripMenuItem.Text = "Cargar Canciones";
             this.cargarCancionesToolStripMenuItem.Click += new System.EventHandler(this.cargarCancionesToolStripMenuItem_Click);
             // 
