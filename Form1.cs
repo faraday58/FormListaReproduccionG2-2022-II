@@ -41,5 +41,23 @@ namespace FormListaReproduccionG2_2022_II
             lbCancion.Text = cancion.Cancion;
 
         }
+
+        private void agregarCancionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAgregar formAgregar = new FormAgregar();
+            formAgregar.EnviarMusica += FormAgregar_EnviarMusica;
+            formAgregar.ShowDialog();
+            
+        }
+
+        private void FormAgregar_EnviarMusica(Musica musica)
+        {
+            canciones.Add(musica);
+            lstbCanciones.Items.Add(musica.Cancion);
+        }
+
+        
+
+
     }
 }

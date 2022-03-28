@@ -2,7 +2,7 @@
 
 namespace FormListaReproduccionG2_2022_II
 {
-    class Musica
+    public class Musica
     {
         #region Atributos
         private string cancion;

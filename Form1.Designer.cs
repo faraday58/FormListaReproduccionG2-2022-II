@@ -39,6 +39,7 @@ namespace FormListaReproduccionG2_2022_II
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarCancionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarCancionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,16 +114,17 @@ namespace FormListaReproduccionG2_2022_II
             this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1176, 45);
+            this.menuStrip1.Size = new System.Drawing.Size(1176, 47);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cargarCancionesToolStripMenuItem});
+            this.cargarCancionesToolStripMenuItem,
+            this.agregarCancionesToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(128, 41);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(128, 43);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // cargarCancionesToolStripMenuItem
@@ -131,6 +133,13 @@ namespace FormListaReproduccionG2_2022_II
             this.cargarCancionesToolStripMenuItem.Size = new System.Drawing.Size(374, 48);
             this.cargarCancionesToolStripMenuItem.Text = "Cargar Canciones";
             this.cargarCancionesToolStripMenuItem.Click += new System.EventHandler(this.cargarCancionesToolStripMenuItem_Click);
+            // 
+            // agregarCancionesToolStripMenuItem
+            // 
+            this.agregarCancionesToolStripMenuItem.Name = "agregarCancionesToolStripMenuItem";
+            this.agregarCancionesToolStripMenuItem.Size = new System.Drawing.Size(403, 48);
+            this.agregarCancionesToolStripMenuItem.Text = "Agregar Canciones";
+            this.agregarCancionesToolStripMenuItem.Click += new System.EventHandler(this.agregarCancionesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -167,6 +176,7 @@ namespace FormListaReproduccionG2_2022_II
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargarCancionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarCancionesToolStripMenuItem;
     }
 }
 
