@@ -27,9 +27,9 @@ namespace FormListaReproduccionG2_2022_II
 
         private void ListaCanciones()
         {
-            canciones.Add(new Musica("Saved", "Khalid "," American teen" ));
-            canciones.Add(new Musica("Evil Incarnate", "Hammerfall", "Revolution"));
-            canciones.Add(new Musica("", "", ""));
+            canciones.Add(new Musica("Saved", "Khalid "," American teen",FormListaReproduccionG2_2022_II.Properties.Resources.american_teen_album ));
+            canciones.Add(new Musica("Evil Incarnate", "Hammerfall", "Revolution", FormListaReproduccionG2_2022_II.Properties.Resources.hamerfall));
+            canciones.Add(new Musica("", "", "", FormListaReproduccionG2_2022_II.Properties.Resources.cafe_tacuba_re));
         }
 
         private void lstbCanciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,6 +39,7 @@ namespace FormListaReproduccionG2_2022_II
             lbArtista.Text = cancion.Artista;
             lbAlbum.Text = cancion.Album;
             lbCancion.Text = cancion.Cancion;
+            ptbPortada.Image = cancion.portada;
 
         }
 

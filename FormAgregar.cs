@@ -14,30 +14,37 @@ namespace FormListaReproduccionG2_2022_II
 
         private void txtbArtista_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (Char)Keys.Enter)
             {
-                string error = "Debes de rellenar el campo";
-                if ( txtbArtista.Text == ""  )
+                #region Control de excepción 
+                try
                 {
-                    errorProviderAgregar.SetError(txtbArtista,error);
-                    throw new ApplicationException();
-                }else if (txtbAlbum.Text == "")
-                {
-                    errorProviderAgregar.SetError(txtbAlbum, error);
-                    throw new ApplicationException();
+                    string error = "Debes de rellenar el campo";
+                    if (txtbArtista.Text == "")
+                    {
+                        errorProviderAgregar.SetError(txtbArtista, error);
+                        throw new ApplicationException();
+                    }
+                    else if (txtbAlbum.Text == "")
+                    {
+                        errorProviderAgregar.SetError(txtbAlbum, error);
+                        throw new ApplicationException();
+                    }
+                    else if (txtbCancion.Text == "")
+                    {
+                        errorProviderAgregar.SetError(txtbCancion, error);
+                        throw new ApplicationException();
+                    }
+
+                    errorProviderAgregar.Clear();
+                    EnviarMusica(new Musica(txtbCancion.Text, txtbArtista.Text, txtbAlbum.Text, FormListaReproduccionG2_2022_II.Properties.Resources.disco_general));
                 }
-                else if( txtbCancion.Text == "")
+                catch (ApplicationException)
                 {
-                    errorProviderAgregar.SetError(txtbCancion, error);
-                    throw new ApplicationException();
+
                 }
 
-                errorProviderAgregar.Clear();
-                EnviarMusica(new Musica(txtbCancion.Text, txtbArtista.Text, txtbAlbum.Text));
-            }
-            catch(ApplicationException)
-            {
-
+                #endregion
             }
         }
     }

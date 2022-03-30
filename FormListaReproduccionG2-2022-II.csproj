@@ -93,5 +93,14 @@
   <ItemGroup>
     <None Include="american_teen_album.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="cafe_tacuba_re.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hamerfall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="disco_general.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

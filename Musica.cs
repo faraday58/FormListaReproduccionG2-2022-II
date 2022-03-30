@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Drawing;
 
 namespace FormListaReproduccionG2_2022_II
 {
@@ -8,14 +8,17 @@ namespace FormListaReproduccionG2_2022_II
         private string cancion;
         private string artista;
         private string album;
+        public Bitmap portada;
         #endregion
 
         #region Constructor
-        public Musica(string cancion, string artista, string album)
+        public Musica(string cancion, string artista, string album, Bitmap portada)
         {
             Cancion = cancion;
             Artista = artista;
             Album = album;
+            this.portada = portada;
+            
         }
         #endregion
 

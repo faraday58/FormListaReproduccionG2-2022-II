@@ -121,4 +121,13 @@
   <data name="american_teen_album" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\american_teen_album.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cafe_tacuba_re" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\cafe_tacuba_re.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hamerfall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\hamerfall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disco_general" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\disco_general.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
