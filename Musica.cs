@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Drawing;
 
 namespace FormListaReproduccionG2_2022_II
 {
@@ -8,14 +8,16 @@ namespace FormListaReproduccionG2_2022_II
         private string cancion;
         private string artista;
         private string album;
+        private Bitmap portada;
         #endregion
 
         #region Constructor
-        public Musica(string cancion, string artista, string album)
+        public Musica(string cancion, string artista, string album,Bitmap portada)
         {
             Cancion = cancion;
             Artista = artista;
             Album = album;
+            Portada= portada;
         }
         #endregion
 
@@ -61,6 +63,23 @@ namespace FormListaReproduccionG2_2022_II
                 else
                 {
                     album = value;
+                }
+                
+            }
+                
+        }
+
+        public Bitmap Portada {
+            get => portada; 
+            set
+            {
+                if(  value == null)
+                {
+                    portada = Properties.Resources.cafe_tacuba_re;
+                }
+                else
+                {
+                    portada = value;
                 }
                 
             }

@@ -27,19 +27,27 @@ namespace FormListaReproduccionG2_2022_II
 
         private void ListaCanciones()
         {
-            canciones.Add(new Musica("Saved", "Khalid "," American teen" ));
-            canciones.Add(new Musica("Evil Incarnate", "Hammerfall", "Revolution"));
-            canciones.Add(new Musica("", "", ""));
+            canciones.Add(new Musica("Saved", "Khalid "," American teen",Properties.Resources.american_teen_album ));
+            canciones.Add(new Musica("Evil Incarnate", "Hammerfall", "Revolution",Properties.Resources.hammer_fall));
+            canciones.Add(new Musica("", "", "",null));
         }
 
         private void lstbCanciones_SelectedIndexChanged(object sender, EventArgs e)
-        {   
-                            //Casteando a Musica
-            Musica cancion =(Musica)canciones[lstbCanciones.SelectedIndex];
-            lbArtista.Text = cancion.Artista;
-            lbAlbum.Text = cancion.Album;
-            lbCancion.Text = cancion.Cancion;
+        {
+            //Casteando a Musica
+            try
+            {
 
+                Musica cancion = (Musica)canciones[lstbCanciones.SelectedIndex];
+                lbArtista.Text = cancion.Artista;
+                lbAlbum.Text = cancion.Album;
+                lbCancion.Text = cancion.Cancion;
+                ptbPortada.Image = cancion.Portada;
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Canción eliminada de forma correcta");
+            }
         }
 
         private void agregarCancionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,8 +64,12 @@ namespace FormListaReproduccionG2_2022_II
             lstbCanciones.Items.Add(musica.Cancion);
         }
 
-        
-
-
+        private void borrarCanciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //El orden para eliminar la canción, nos interesa para
+            //evitar una Excepción.
+            canciones.RemoveAt(lstbCanciones.SelectedIndex);
+            lstbCanciones.Items.RemoveAt(lstbCanciones.SelectedIndex);
+        }
     }
 }
