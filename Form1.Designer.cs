@@ -193,7 +193,6 @@ namespace FormListaReproduccionG2_2022_II
             // 
             // ptbPortada
             // 
-            this.ptbPortada.Image = global::FormListaReproduccionG2_2022_II.Properties.Resources.hamerfall;
             this.ptbPortada.Location = new System.Drawing.Point(929, 91);
             this.ptbPortada.Name = "ptbPortada";
             this.ptbPortada.Size = new System.Drawing.Size(333, 332);
