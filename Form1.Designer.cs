@@ -191,6 +191,16 @@ namespace FormListaReproduccionG2_2022_II
             this.reproducirToolStripMenuItem.Size = new System.Drawing.Size(372, 56);
             this.reproducirToolStripMenuItem.Text = "Reproducir";
             // 
+            // ptbPortada
+            // 
+            this.ptbPortada.Image = global::FormListaReproduccionG2_2022_II.Properties.Resources.hamerfall;
+            this.ptbPortada.Location = new System.Drawing.Point(929, 91);
+            this.ptbPortada.Name = "ptbPortada";
+            this.ptbPortada.Size = new System.Drawing.Size(333, 332);
+            this.ptbPortada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPortada.TabIndex = 3;
+            this.ptbPortada.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
