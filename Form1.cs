@@ -38,7 +38,7 @@ namespace FormListaReproduccionG2_2022_II
             try
             {
 
-                Musica cancion = (Musica)canciones[lstbCanciones.SelectedIndex];
+                cancion = (Musica)canciones[lstbCanciones.SelectedIndex];
                 lbArtista.Text = cancion.Artista;
                 lbAlbum.Text = cancion.Album;
                 lbCancion.Text = cancion.Cancion;
