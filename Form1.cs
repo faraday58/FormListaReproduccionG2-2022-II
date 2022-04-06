@@ -30,9 +30,9 @@ namespace FormListaReproduccionG2_2022_II
 
         private void ListaCanciones()
         {
-            canciones.Add(new Musica("Saved", "Khalid "," American teen",Properties.Resources.american_teen_album ));
-            canciones.Add(new Musica("Evil Incarnate", "Hammerfall", "Revolution",Properties.Resources.hammer_fall));
-            canciones.Add(new Musica("", "", "",null));
+            canciones.Add(new Musica("Saved", "Khalid "," American teen",Properties.Resources.american_teen_album,222));
+            canciones.Add(new Musica("Evil Incarnate", "Hammerfall", "Revolution",Properties.Resources.hammer_fall,257));
+            canciones.Add(new Musica("", "", "",null,0));
         }
 
         private void lstbCanciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,6 +46,8 @@ namespace FormListaReproduccionG2_2022_II
                 lbAlbum.Text = cancion.Album;
                 lbCancion.Text = cancion.Cancion;
                 ptbPortada.Image = cancion.Portada;
+
+                lbTiempoTotal.Text = cancion.ToString();
             }
             catch(ArgumentOutOfRangeException)
             {

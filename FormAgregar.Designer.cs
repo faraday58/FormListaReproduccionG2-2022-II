@@ -38,6 +38,8 @@ namespace FormListaReproduccionG2_2022_II
             this.txtbAlbum = new System.Windows.Forms.TextBox();
             this.errorProviderAgregar = new System.Windows.Forms.ErrorProvider(this.components);
             this.ptbPortada = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtbDuracion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPortada)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +67,7 @@ namespace FormListaReproduccionG2_2022_II
             // txtbArtista
             // 
             this.txtbArtista.Location = new System.Drawing.Point(324, 105);
-            this.txtbArtista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbArtista.Margin = new System.Windows.Forms.Padding(4);
             this.txtbArtista.Name = "txtbArtista";
             this.txtbArtista.Size = new System.Drawing.Size(654, 44);
             this.txtbArtista.TabIndex = 2;
@@ -74,7 +76,7 @@ namespace FormListaReproduccionG2_2022_II
             // txtbCancion
             // 
             this.txtbCancion.Location = new System.Drawing.Point(324, 180);
-            this.txtbCancion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbCancion.Margin = new System.Windows.Forms.Padding(4);
             this.txtbCancion.Name = "txtbCancion";
             this.txtbCancion.Size = new System.Drawing.Size(654, 44);
             this.txtbCancion.TabIndex = 2;
@@ -93,7 +95,7 @@ namespace FormListaReproduccionG2_2022_II
             // txtbAlbum
             // 
             this.txtbAlbum.Location = new System.Drawing.Point(324, 250);
-            this.txtbAlbum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbAlbum.Margin = new System.Windows.Forms.Padding(4);
             this.txtbAlbum.Name = "txtbAlbum";
             this.txtbAlbum.Size = new System.Drawing.Size(654, 44);
             this.txtbAlbum.TabIndex = 2;
@@ -113,19 +115,40 @@ namespace FormListaReproduccionG2_2022_II
             this.ptbPortada.TabIndex = 3;
             this.ptbPortada.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(142, 336);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 37);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Duración";
+            // 
+            // txtbDuracion
+            // 
+            this.txtbDuracion.Location = new System.Drawing.Point(324, 328);
+            this.txtbDuracion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbDuracion.Name = "txtbDuracion";
+            this.txtbDuracion.Size = new System.Drawing.Size(654, 44);
+            this.txtbDuracion.TabIndex = 2;
+            this.txtbDuracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbArtista_KeyPress);
+            // 
             // FormAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1874, 402);
+            this.ClientSize = new System.Drawing.Size(1874, 528);
             this.Controls.Add(this.ptbPortada);
+            this.Controls.Add(this.txtbDuracion);
             this.Controls.Add(this.txtbAlbum);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtbCancion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtbArtista);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAgregar";
             this.Text = "FormAgregar";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAgregar)).EndInit();
@@ -145,5 +168,7 @@ namespace FormListaReproduccionG2_2022_II
         private System.Windows.Forms.TextBox txtbAlbum;
         private System.Windows.Forms.ErrorProvider errorProviderAgregar;
         private System.Windows.Forms.PictureBox ptbPortada;
+        private System.Windows.Forms.TextBox txtbDuracion;
+        private System.Windows.Forms.Label label4;
     }
 }

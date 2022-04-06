@@ -106,7 +106,13 @@ namespace FormListaReproduccionG2_2022_II
         }
         #endregion
 
+        public override string ToString()
+        {
+            int minutos = Duracion / 60;
+            int segundos = Duracion  - minutos * 60 ; 
 
+            return minutos +":"+segundos + "[min]"  ;
+        }
 
 
 

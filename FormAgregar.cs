@@ -36,13 +36,24 @@ namespace FormListaReproduccionG2_2022_II
                         errorProviderAgregar.SetError(txtbCancion, error);
                         throw new ApplicationException();
                     }
+                    else if (txtbDuracion.Text == "")
+                    {
+                        errorProviderAgregar.SetError(txtbCancion, error);
+                        throw new ApplicationException();
+                    }
+
+                    int duracion = int.Parse(txtbDuracion.Text);
 
                     errorProviderAgregar.Clear();
-                    EnviarMusica(new Musica(txtbCancion.Text, txtbArtista.Text, txtbAlbum.Text, (Bitmap)ptbPortada.Image));
+                    EnviarMusica(new Musica(txtbCancion.Text, txtbArtista.Text, txtbAlbum.Text, (Bitmap)ptbPortada.Image,duracion));
                 }
                 catch (ApplicationException)
                 {
 
+                }
+                catch(FormatException )
+                {
+                    MessageBox.Show("La duración debe estar en segundos");
                 }
                 #endregion
             }
