@@ -9,15 +9,17 @@ namespace FormListaReproduccionG2_2022_II
         private string artista;
         private string album;
         private Bitmap portada;
+        private int duracion;
         #endregion
 
         #region Constructor
-        public Musica(string cancion, string artista, string album,Bitmap portada)
+        public Musica(string cancion, string artista, string album, Bitmap portada, int duracion)
         {
             Cancion = cancion;
             Artista = artista;
             Album = album;
-            Portada= portada;
+            Portada = portada;
+            Duracion= duracion;
         }
         #endregion
 
@@ -83,6 +85,23 @@ namespace FormListaReproduccionG2_2022_II
                 }
                 
             }
+                
+        }
+
+        public int Duracion {
+            get => duracion;
+            set
+            {
+                if( value == 0)
+                {
+                    duracion = 128;
+                }
+                else
+                {
+                    duracion = value;
+                }                
+            } 
+
                 
         }
         #endregion

@@ -31,6 +31,9 @@ namespace FormListaReproduccionG2_2022_II
         {
             this.components = new System.ComponentModel.Container();
             this.lstbCanciones = new System.Windows.Forms.ListBox();
+            this.cmsMenuLista = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.borrarCanciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reproducirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,12 +45,13 @@ namespace FormListaReproduccionG2_2022_II
             this.cargarCancionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCancionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ptbPortada = new System.Windows.Forms.PictureBox();
-            this.cmsMenuLista = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.borrarCanciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reproducirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbTiempoTrans = new System.Windows.Forms.Label();
+            this.lbTiempoTotal = new System.Windows.Forms.Label();
+            this.pgbDuracion = new System.Windows.Forms.ProgressBar();
+            this.timerCiclo = new System.Windows.Forms.Timer(this.components);
+            this.cmsMenuLista.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPortada)).BeginInit();
-            this.cmsMenuLista.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstbCanciones
@@ -56,11 +60,34 @@ namespace FormListaReproduccionG2_2022_II
             this.lstbCanciones.FormattingEnabled = true;
             this.lstbCanciones.ItemHeight = 37;
             this.lstbCanciones.Location = new System.Drawing.Point(107, 134);
-            this.lstbCanciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstbCanciones.Margin = new System.Windows.Forms.Padding(4);
             this.lstbCanciones.Name = "lstbCanciones";
             this.lstbCanciones.Size = new System.Drawing.Size(486, 559);
             this.lstbCanciones.TabIndex = 0;
             this.lstbCanciones.SelectedIndexChanged += new System.EventHandler(this.lstbCanciones_SelectedIndexChanged);
+            // 
+            // cmsMenuLista
+            // 
+            this.cmsMenuLista.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.cmsMenuLista.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.borrarCanciónToolStripMenuItem,
+            this.reproducirToolStripMenuItem});
+            this.cmsMenuLista.Name = "cmsMenuLista";
+            this.cmsMenuLista.Size = new System.Drawing.Size(373, 116);
+            // 
+            // borrarCanciónToolStripMenuItem
+            // 
+            this.borrarCanciónToolStripMenuItem.Name = "borrarCanciónToolStripMenuItem";
+            this.borrarCanciónToolStripMenuItem.Size = new System.Drawing.Size(372, 56);
+            this.borrarCanciónToolStripMenuItem.Text = "Quitar de mi lista";
+            this.borrarCanciónToolStripMenuItem.Click += new System.EventHandler(this.borrarCanciónToolStripMenuItem_Click);
+            // 
+            // reproducirToolStripMenuItem
+            // 
+            this.reproducirToolStripMenuItem.Name = "reproducirToolStripMenuItem";
+            this.reproducirToolStripMenuItem.Size = new System.Drawing.Size(372, 56);
+            this.reproducirToolStripMenuItem.Text = "Reproducir";
+            this.reproducirToolStripMenuItem.Click += new System.EventHandler(this.reproducirToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -161,52 +188,56 @@ namespace FormListaReproduccionG2_2022_II
             // ptbPortada
             // 
             this.ptbPortada.Image = global::FormListaReproduccionG2_2022_II.Properties.Resources.hammer_fall;
-            this.ptbPortada.Location = new System.Drawing.Point(1614, 123);
+            this.ptbPortada.Location = new System.Drawing.Point(1481, 201);
             this.ptbPortada.Margin = new System.Windows.Forms.Padding(4);
-            this.ptbPortada.Name = "ptbPortada";
-            this.ptbPortada.Size = new System.Drawing.Size(527, 491);
-            this.ptbPortada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbPortada.TabIndex = 3;
-            this.ptbPortada.TabStop = false;
-            // 
-            // cmsMenuLista
-            // 
-            this.cmsMenuLista.ImageScalingSize = new System.Drawing.Size(48, 48);
-            this.cmsMenuLista.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.borrarCanciónToolStripMenuItem,
-            this.reproducirToolStripMenuItem});
-            this.cmsMenuLista.Name = "cmsMenuLista";
-            this.cmsMenuLista.Size = new System.Drawing.Size(421, 182);
-            // 
-            // borrarCanciónToolStripMenuItem
-            // 
-            this.borrarCanciónToolStripMenuItem.Name = "borrarCanciónToolStripMenuItem";
-            this.borrarCanciónToolStripMenuItem.Size = new System.Drawing.Size(420, 56);
-            this.borrarCanciónToolStripMenuItem.Text = "Quitar de mi lista";
-            this.borrarCanciónToolStripMenuItem.Click += new System.EventHandler(this.borrarCanciónToolStripMenuItem_Click);
-            // 
-            // reproducirToolStripMenuItem
-            // 
-            this.reproducirToolStripMenuItem.Name = "reproducirToolStripMenuItem";
-            this.reproducirToolStripMenuItem.Size = new System.Drawing.Size(372, 56);
-            this.reproducirToolStripMenuItem.Text = "Reproducir";
-            // 
-            // ptbPortada
-            // 
-            this.ptbPortada.Location = new System.Drawing.Point(929, 91);
             this.ptbPortada.Name = "ptbPortada";
             this.ptbPortada.Size = new System.Drawing.Size(333, 332);
             this.ptbPortada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbPortada.TabIndex = 3;
             this.ptbPortada.TabStop = false;
             // 
+            // lbTiempoTrans
+            // 
+            this.lbTiempoTrans.AutoSize = true;
+            this.lbTiempoTrans.Location = new System.Drawing.Point(806, 656);
+            this.lbTiempoTrans.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTiempoTrans.Name = "lbTiempoTrans";
+            this.lbTiempoTrans.Size = new System.Drawing.Size(78, 37);
+            this.lbTiempoTrans.TabIndex = 1;
+            this.lbTiempoTrans.Text = "0 [s]";
+            // 
+            // lbTiempoTotal
+            // 
+            this.lbTiempoTotal.AutoSize = true;
+            this.lbTiempoTotal.Location = new System.Drawing.Point(1737, 656);
+            this.lbTiempoTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTiempoTotal.Name = "lbTiempoTotal";
+            this.lbTiempoTotal.Size = new System.Drawing.Size(114, 37);
+            this.lbTiempoTotal.TabIndex = 1;
+            this.lbTiempoTotal.Text = "3 [min]";
+            // 
+            // pgbDuracion
+            // 
+            this.pgbDuracion.Location = new System.Drawing.Point(1033, 667);
+            this.pgbDuracion.Name = "pgbDuracion";
+            this.pgbDuracion.Size = new System.Drawing.Size(610, 14);
+            this.pgbDuracion.Step = 1;
+            this.pgbDuracion.TabIndex = 4;
+            // 
+            // timerCiclo
+            // 
+            this.timerCiclo.Tick += new System.EventHandler(this.timerCiclo_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2479, 837);
+            this.ClientSize = new System.Drawing.Size(2479, 806);
+            this.Controls.Add(this.pgbDuracion);
             this.Controls.Add(this.ptbPortada);
             this.Controls.Add(this.lbCancion);
+            this.Controls.Add(this.lbTiempoTotal);
+            this.Controls.Add(this.lbTiempoTrans);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbAlbum);
             this.Controls.Add(this.lbArtista);
@@ -215,13 +246,14 @@ namespace FormListaReproduccionG2_2022_II
             this.Controls.Add(this.lstbCanciones);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.cmsMenuLista.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPortada)).EndInit();
-            this.cmsMenuLista.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,6 +276,10 @@ namespace FormListaReproduccionG2_2022_II
         private System.Windows.Forms.ContextMenuStrip cmsMenuLista;
         private System.Windows.Forms.ToolStripMenuItem borrarCanciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reproducirToolStripMenuItem;
+        private System.Windows.Forms.Label lbTiempoTrans;
+        private System.Windows.Forms.Label lbTiempoTotal;
+        private System.Windows.Forms.ProgressBar pgbDuracion;
+        private System.Windows.Forms.Timer timerCiclo;
     }
 }
 
