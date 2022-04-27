@@ -12,6 +12,10 @@ namespace FormListaReproduccionG2_2022_II
         private int contSegundos;
         private int contMinutos;
         private int contSegundero;
+        private bool reproducir;
+        private bool automatica;
+        private int indice;
+        private int contCanciones;
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +29,7 @@ namespace FormListaReproduccionG2_2022_II
             {
                 lstbCanciones.Items.Add(musica.Cancion);
             }
+            contCanciones = lstbCanciones.Items.Count;
 
         }
 
@@ -80,7 +85,12 @@ namespace FormListaReproduccionG2_2022_II
         private void reproducirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timerCiclo.Start();
-            pgbDuracion.Maximum = 180;
+            lbTiempoTrans.Text = "0 [s]";
+            contMinutos = 0;
+            contSegundero = 0;
+            contSegundos = 0;
+            pgbDuracion.Maximum =cancion.Duracion;
+            reproducir = true;
         }
 
         private void timerCiclo_Tick(object sender, EventArgs e)
@@ -104,13 +114,58 @@ namespace FormListaReproduccionG2_2022_II
                
             }
             contSegundero += 1;
-
-
             contSegundos += 1; //Contador de segundos
-            if( pgbDuracion.Value == 180   )
+
+            if ( pgbDuracion.Value == cancion.Duracion && reproducir )
             {
+
+                reproducir = false;
                 timerCiclo.Stop();
+
             }
+            else if( pgbDuracion.Value == cancion.Duracion && automatica)
+            {
+                contCanciones -= 1;
+                if (contCanciones == 0)
+                {
+                    automatica = false;
+                    timerCiclo.Stop();
+                    
+                }
+                
+                if(lstbCanciones.SelectedIndex < lstbCanciones.Items.Count -1  )
+                {
+                    lstbCanciones.SelectedIndex += 1;
+                }
+                else
+                {
+                    lstbCanciones.SelectedIndex = 0;
+                }
+                lbTiempoTrans.Text = "0 [s]";
+                contMinutos = 0;
+                contSegundero = 0;
+                contSegundos = 0;
+                pgbDuracion.Maximum = cancion.Duracion;
+                pgbDuracion.Value = 0;
+
+            }
+        }
+        
+      
+
+
+        private void reproducciónAutomáticaToolStripMenuItem_Click(object sender, EventArgs e)
+        {         
+            automatica = true;
+            contCanciones = lstbCanciones.Items.Count;
+            timerCiclo.Start();
+            lbTiempoTrans.Text = "0 [s]";
+            contMinutos = 0;
+            contSegundero = 0;
+            contSegundos = 0;
+            pgbDuracion.Maximum = cancion.Duracion;
+
+
         }
     }
 }
