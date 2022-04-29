@@ -13,8 +13,7 @@ namespace FormListaReproduccionG2_2022_II
         private int contMinutos;
         private int contSegundero;
         private bool reproducir;
-        private bool automatica;
-        private int indice;
+        private bool automatica;        
         private int contCanciones;
         public Form1()
         {
@@ -157,7 +156,7 @@ namespace FormListaReproduccionG2_2022_II
         private void reproducciónAutomáticaToolStripMenuItem_Click(object sender, EventArgs e)
         {         
             automatica = true;
-            contCanciones = lstbCanciones.Items.Count;
+            contCanciones = lstbCanciones.Items.Count; // Total de canciones en el reproductor
             timerCiclo.Start();
             lbTiempoTrans.Text = "0 [s]";
             contMinutos = 0;

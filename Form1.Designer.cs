@@ -242,7 +242,7 @@ namespace FormListaReproduccionG2_2022_II
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2479, 806);
+            this.ClientSize = new System.Drawing.Size(2479, 1081);
             this.Controls.Add(this.pgbDuracion);
             this.Controls.Add(this.ptbPortada);
             this.Controls.Add(this.lbCancion);
